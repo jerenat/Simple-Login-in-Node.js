@@ -1,0 +1,30 @@
+<%- include('components/_head'); %>
+
+
+<!-- cuadro de logueo -->
+<div class="login m-4 p-8">
+    <form action="">
+        <h2 class="text-white text-2xl font-bold">Log in</h2>
+        <div class="mt-2"><input type="text" name="username" id="username" placeholder="Username.."></div>
+        <div class="mt-2"><input type="password" name="password" id="password" placeholder="Password..."></div>
+        <button class="mt-2 text-white cursor-pointer">Log In</button>
+    </form>
+</div>
+
+<hr>
+
+<!-- cuadro de registro -->
+<div class="register mt-10 m-4 p-8">
+    <form action="">
+        <h2 class="text-white text-2xl font-bold">Register</h2>
+        <div class="mt-2"><input type="text" name="username" id="name" placeholder="Username..."></div>
+        <div class="mt-2"><input type="text" name="email" id="email" placeholder="E-mail.."></div>
+        <div class="mt-2"><input type="text" name="password" id="password" placeholder="Password.."></div>
+        <button class="mt-2 text-white cursor-pointer">Register now!</button>
+    </form>
+</div>
+
+
+<script src="/public/js/script.js"></script>
+<script src="/public/js/login.js"></script>
+<%- include('components/_footer'); %>
