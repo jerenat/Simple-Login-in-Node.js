@@ -56,3 +56,30 @@ export const ifnoauth = async (req, res, next) => {
     }
   });
 };
+
+// -- Obtener id del token
+export const getid = async (req, res, next) => {
+  // -- try-catch
+  try {
+    // -- extrae las cookies
+    const { token } = req.cookies;
+
+    // -- Si el token no existe
+    if (!token) res.status(400).json({ mesage: "NO_TOKEN" });
+
+    // -- Extrae las cookies
+    jwt.verify(token, SECRET, (error, user) => {
+      // -- si el token está vencido o es inválido
+      if (error) {
+        return res.status(401).json({ message: "TOKEN_INVALID" });
+      }
+      // -- si existe, extrae el id
+      req.user = user.id;
+      next();
+    });
+
+    // -- Obtiene un error
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};

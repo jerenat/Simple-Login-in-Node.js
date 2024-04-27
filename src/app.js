@@ -10,6 +10,7 @@ import cookieParser from "cookie-parser";
 // -- Locales
 import authRoutes from "./routes/auth.routes.js";
 import indexRoutes from "./routes/index.routes.js";
+import postRoutes from "./routes/posts.routes.js";
 
 // -- VARIABLES GLOBALES
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -35,6 +36,7 @@ app.use("/public", express.static(path.join(__dirname, "/views/public/")));
 
 // -- Middlewares
 app.use("/api", authRoutes);
+app.use("/api", postRoutes);
 app.use(indexRoutes);
 
 // -- EXPORTAR
